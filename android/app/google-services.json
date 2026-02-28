@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "963801960223",
+    "project_id": "ritmaedtech-a8f41",
+    "storage_bucket": "ritmaedtech-a8f41.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963801960223:android:6bc8f94ed3a755e0e06a2a",
+        "android_client_info": {
+          "package_name": "com.ritma.edtech"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjOz16q10VjSv-GWFvT14r3lecUD6gjZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963801960223:android:47124e6e65feff20e06a2a",
+        "android_client_info": {
+          "package_name": "com.ritma_ed"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjOz16q10VjSv-GWFvT14r3lecUD6gjZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963801960223:android:b07c87bd750078abe06a2a",
+        "android_client_info": {
+          "package_name": "com.ritmaedtech"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjOz16q10VjSv-GWFvT14r3lecUD6gjZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

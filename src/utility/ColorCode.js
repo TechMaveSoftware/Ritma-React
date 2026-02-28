@@ -1,0 +1,23 @@
+module.exports = {
+  primary: '#1B94EF',
+  secondary: '#B97A19',
+  yellow: '#ECB123',
+  accent: '#33A9DB',
+  primaryTrans: '#01993440',
+  secondaryTrans: '#B97A1940',
+  accentTrans: '#33A9DBAA',
+
+  backgroundColor: '#FCFFF4',
+  selectorDot1: '#128C7E',
+  unselectorDot1: '#128C7E88',
+  red: '#EA5046',
+  white: '#FFFFFF',
+  black: '#000000',
+  textBlack: '#1D1617',
+  grey888: '#888888',
+  greyAAA: '#AAAAAA',
+  greyDDD: '#DDDDDD',
+  placeholder: '#A8A8A8',
+  placeholder1: '#B4B4B4',
+  transarent: '#FFFFFF00',
+};
