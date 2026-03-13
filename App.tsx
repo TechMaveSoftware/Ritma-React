@@ -69,8 +69,6 @@ import CourseAssignmentsScreen from './src/screens/PendingAssignment/CourseAssig
 import CourseAssignmentsScreenTablet from './src/screens/PendingAssignment/CourseAssignmentsScreenTablet';
 import ToastUtility from './src/utility/ToastUtility';
 import ConstData from './src/utility/ConstData';
-// import { Notifications } from 'react-native-notifications';
-// import AutoPushNotificationService from './src/api/AutoPushNotificationService';
 import EnhancedPushNotificationService from './src/api/EnhancedPushNotificationService';
 import OnlineSyllabusScreen from './src/screens/online_student/online_syllabus/OnlineSyllabusScreen';
 import OnlineSyllabusDetailScreen from './src/screens/online_student/online_syllabus_detail/OnlineSyllabusDetailScreen';
@@ -784,23 +782,6 @@ function App(): JSX.Element {
         vibration: true,
         vibrationPattern: [300, 500],
       });
-
-      // NOTE: Foreground message handling is now done by EnhancedPushNotificationService
-      // This listener was only checking for notification blocks and missing data-only messages
-      /*
-      const unsubscribeForeground = messaging().onMessage(async remoteMessage => {
-        console.log('📱 Foreground message received:', remoteMessage);
-
-        if (remoteMessage.notification) {
-          await displayGlobalNotification(
-            remoteMessage.notification.title || '',
-            remoteMessage.notification.body || '',
-            remoteMessage.data || {}
-          );
-        }
-      });
-      */
-
       // Listen for background/quit state messages
       messaging().onNotificationOpenedApp(remoteMessage => {
         console.log('📱 App opened from background notification:', remoteMessage);
@@ -822,8 +803,6 @@ function App(): JSX.Element {
           }
         });
 
-      // Check if app was opened from quit state by tapping a Notifee notification
-      // This is required for notifications displayed via notifee in background handlers.
       notifee.getInitialNotification().then(async initialNotification => {
         const notifeePayload = initialNotification?.notification
           ? {
@@ -993,10 +972,7 @@ function App(): JSX.Element {
       console.log('🔑 === APP STARTUP TOKEN CHECK ===');
       console.log('📱 Platform:', Platform.OS);
 
-      // if (Platform.OS == 'ios') {
-      //   const apnToken = await messaging().getAPNSToken();
-      //   console.log(Platform.OS, 'apnToken', apnToken);
-      // }
+     
 
       const fcmToken = await messaging().getToken();
       console.log('📱 FCM Token received:', fcmToken);
@@ -1017,12 +993,6 @@ function App(): JSX.Element {
 
       console.log('🔑 === END TOKEN CHECK ===');
 
-      // messaging().onTokenRefresh(async fcmToken => {
-      //   console.log(Platform.OS, ' = Token Refresh =>  ', fcmToken);
-      //   if (fcmToken) {
-      //     await StorageUtility.storeDeviceToken(fcmToken);
-      //   }
-      // });
     } catch (error) {
       console.error('❌ Error in checkToken:', error);
     }
@@ -1056,24 +1026,7 @@ function App(): JSX.Element {
     },
   });
 
-  /* 
-  // Removed conflicting Wix notifications to avoid clashing with Firebase
-  Notifications.registerRemoteNotifications();
-  Notifications.events().registerNotificationReceivedForeground(
-    (notification, completion) => {
-      console.log(
-        `Notification received in foreground: ${notification.title} : ${notification.body}`,
-      );
-      completion({ alert: false, sound: false, badge: false });
-    },
-  );
-  Notifications.events().registerNotificationOpened(
-    (notification, completion) => {
-      console.log(`Notification opened: ${notification.payload}`);
-      completion();
-    },
-  );
-  */
+
 
   return (
     <SafeAreaProvider>

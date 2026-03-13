@@ -215,87 +215,6 @@ export default {
       });
   },
 
-  // scheduleClockoutNotif: async () => {
-  //   await notifee.requestPermission();
-
-  //   // Create a channel (required for Android)
-  //   const channelId = await notifee.createChannel({
-  //     id: 'gce_education',
-  //     name: 'GCE-Education',
-  //   });
-
-  //   // var date = moment();
-  //   // date = date.add(4, 'hour');
-  //   // date = date.add(0, 'minute');
-  //   // date = date.set('second', 0);
-
-  //   // console.log('date', date);
-
-  //   // var timeStampPass = date.valueOf();
-
-  //   // console.log('date - time', moment(date).format('DD-MM-yyyy - HH:mm:ss'));
-  //   // console.log('timeStampPass', timeStampPass);
-
-  //   const trigger: IntervalTrigger = {
-  //     type: TriggerType.INTERVAL,
-  //     interval: 4 * 60,
-  //     timeUnit: TimeUnit.MINUTES,
-  //   };
-
-  //   notifee
-  //     .createTriggerNotification(
-  //       {
-  //         id: '654321',
-  //         title: 'GCE-Education',
-  //         body: 'You have been clocked out.',
-  //         android: {
-  //           channelId: channelId,
-  //           smallIcon: 'ic_notification', // optional, defaults to 'ic_launcher'.
-  //           color: ColorCode.primary,
-  //           // asForegroundService: true,
-  //           // color: AndroidColor.RED,
-  //           // colorized: true,
-  //           // pressAction is needed if you want the notification to open the app when pressed
-  //           pressAction: {
-  //             id: 'mark-as-read',
-  //           },
-  //         },
-  //       },
-  //       trigger,
-  //     )
-  //     .then(() => {
-  //       console.log('Clockout Notification Received');
-  //     });
-  // },
-
-  // showNormalNotification: async msg => {
-  //   await notifee.requestPermission();
-
-  //   // Create a channel (required for Android)
-  //   const channelId = await notifee.createChannel({
-  //     id: 'gce_education',
-  //     name: 'GCE-Education',
-  //   });
-
-  //   notifee
-  //     .displayNotification({
-  //       // id: '1234567',
-  //       title: 'GCE-Education',
-  //       body: msg ?? 'You have a new notification, click to view',
-  //       android: {
-  //         channelId: channelId,
-  //         smallIcon: 'ic_notification', // optional, defaults to 'ic_launcher'.
-  //         color: ColorCode.primary,
-  //         // pressAction is needed if you want the notification to open the app when pressed
-  //         // pressAction: {
-  //         //   id: 'mark-as-read',
-  //         // },
-  //       },
-  //     })
-  //     .then(() => {
-  //       console.log('Normal Notification Received');
-  //     });
-  // },
 
   cancelTriggerNotif: () => {
     console.log('Cancel Notification');
@@ -303,38 +222,6 @@ export default {
       console.log('Trigger notification cancelled.');
     });
   },
-
-  // scheduleHourlyNotifFCM: async () => {
-  //   var date = moment();
-  //   // date = date.add(4*60, 'minute');
-  //   date = date.add(2, 'minute');
-  //   date = date.set('second', 0);
-
-  //   console.log('date', date);
-
-  //   var timeStampPass = date.valueOf();
-
-  //   console.log('date - time', moment(date).format('DD-MM-yyyy - HH:mm:ss'));
-  //   console.log('timeStampPass', timeStampPass);
-  //   console.log('new Date()1', new Date());
-
-  //   // BackgroundTimer.runBackgroundTimer(() => {
-  //   //   // // notifee.cancelDisplayedNotification('123456');
-  //   //   // directClockout();
-  //   //   // // scheduleClockoutNotif();
-  //   //   console.log('============scheduleHourlyNotifFCM============');
-  //   // }, timeStampPass);
-
-  //   Notifications.postLocalNotification({
-  //     body: 'Local notification!',
-  //     title: 'Local Notification Title',
-  //     // sound: "chime.aiff",
-  //     // silent: false,
-  //     // category: "SOME_CATEGORY",
-  //     // userInfo: { },
-  //     // fireDate: new Date(),
-  //   });
-  // },
 
   showErrorMsg: obj => {
     console.log('obj', obj);
