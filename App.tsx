@@ -13,6 +13,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { DefaultTheme, Provider } from 'react-native-paper';
 import { CommonActions, NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { navigationRef } from './src/utility/NavigationService';
 import ColorCode from './src/utility/ColorCode';
 import AndroidSplashScreen from './src/screens/splash/AndroidSplashScreen';
@@ -1029,13 +1030,15 @@ function App(): JSX.Element {
 
 
   return (
-    <SafeAreaProvider>
-      <Provider theme={getTheme()}>
-        <NavigationContainer ref={navigationRef}>
-          <MainStack />
-        </NavigationContainer>
-      </Provider>
-    </SafeAreaProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider>
+        <Provider theme={getTheme()}>
+          <NavigationContainer ref={navigationRef}>
+            <MainStack />
+          </NavigationContainer>
+        </Provider>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 }
 
